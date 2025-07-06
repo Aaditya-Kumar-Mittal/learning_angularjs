@@ -65,7 +65,7 @@ Users can:
 
 ## 🔄 Data Flow Diagram
 
-```mermaid
+```plaintext
 graph TD
   A[User Input (Text Box)] --> B[ng-model binds to $scope.newTodo]
   B --> C[User clicks "Add" button]
