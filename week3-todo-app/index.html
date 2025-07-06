@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApplication">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo Application</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="./app.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f8e9;
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #2e7d32;
+    }
+
+    input[type="text"] {
+      width: 75%;
+      padding: 10px;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #388e3c;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    ul {
+      margin-top: 20px;
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      background: #e8f5e9;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .remove-btn {
+      background-color: #d32f2f;
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+
+<body ng-controller="TodoController">
+
+  <div class="container">
+    <h2>📝 Todo List</h2>
+    <input type="text" ng-model="newTodo" placeholder="Add a new task...">
+    <button ng-click="addTodo()">Add</button>
+
+    <ul>
+      <li ng-repeat="todo in todos">
+        {{ todo.text }}
+        <button class="remove-btn" ng-click="removeTodo($index)">Remove</button>
+      </li>
+    </ul>
+  </div>
+
+</body>
+
+</html>

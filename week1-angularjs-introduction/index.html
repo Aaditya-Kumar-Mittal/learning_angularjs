@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to AngularJS</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="./app.js"></script>
+
+</head>
+
+<body ng-controller="MainController">
+
+  <div class="container">
+    <h2>Hello, {{ name || Guest }}!</h2>
+    <input type="text" ng-model="name" placeholder="Enter your name">
+  </div>
+
+
+
+</body>
+
+</html>
