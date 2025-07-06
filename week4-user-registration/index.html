@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="formApp">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form in AngularJS</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="./app.js"></script>
+</head>
+
+<body ng-controller="FormController">
+
+  <div class="container">
+    <h2>User Registration</h2>
+
+    <form name="userForm" ng-submit="submitForm()" novalidate>
+
+      <input type="text" name="name" placeholder="Enter your name" required ng-model="user.name">
+      <div class="error" ng-show="userForm.name.$touched && userForm.name.$invalid">Name is required!</div>
+
+      <input type="email" name="email" placeholder="Enter your email" required ng-model="user.email">
+      <div class="error" ng-show="userForm.email.$touched && userForm.email.$invalid">A vaild email is required!</div>
+
+      <!-- Password -->
+      <input type="password" name="password" placeholder="Password" ng-model="user.password" ng-minlength="6"
+        required />
+      <div class="error" ng-show="userForm.password.$touched && userForm.password.$invalid">
+        Password must be at least 6 characters.
+      </div>
+
+
+      <button type="submit" ng-disabled="userForm.$invalid">Submit Form</button>
+      <p class="success" ng-show="submitted">🎉 Registered Successfully!</p>
+    </form>
+  </div>
+
+</body>
+
+</html>
